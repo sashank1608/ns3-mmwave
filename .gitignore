@@ -9,7 +9,6 @@
 *.pyc
 *.pyo
 *.gch
-*.txt
 *.cwnd
 *.dat
 *.log
