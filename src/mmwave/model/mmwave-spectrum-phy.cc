@@ -100,11 +100,6 @@ MmWaveSpectrumPhy::GetTypeId (void)
                      "State Value to trace",
                      MakeTraceSourceAccessor (&MmWaveSpectrumPhy::m_intState),
                      "ns3::TracedValueCallback::Int32")
-    .AddAttribute ("MakeItSleep",
-                   "Make the base station to sleep {by default false].",
-                   BooleanValue (false),
-                   MakeBooleanAccessor (&MmWaveSpectrumPhy::m_sleepEnabled),
-                   MakeBooleanChecker ())
     .AddAttribute ("DataErrorModelEnabled",
                    "Activate/Deactivate the error model of data (TBs of PDSCH and PUSCH) [by default is active].",
                    BooleanValue (true),
