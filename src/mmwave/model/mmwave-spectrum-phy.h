@@ -284,6 +284,7 @@ private:
   Ptr<MmWaveBeamformingModel> m_beamforming; //!< used to compute the beamforming vector
 
   uint16_t m_cellId;
+
   State m_state;
 
   uint8_t m_componentCarrierId; ///< the component carrier ID

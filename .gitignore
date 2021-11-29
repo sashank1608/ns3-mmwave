@@ -9,6 +9,7 @@
 *.pyc
 *.pyo
 *.gch
+
 *.cwnd
 *.dat
 *.log
@@ -26,6 +27,7 @@ seventh-packet-byte-count.png
 testpy-output
 
 bindings/python/pybindgen/
+
 ms_print.*
 massif.*
 coverity

@@ -230,31 +230,8 @@ void
 MmWaveSpectrumPhy::ChangeState (State newState)
 {
   NS_LOG_LOGIC (this << " state: " << m_state << " -> " << newState);
-  if (m_sleepEnabled)
-  {
-    m_state = IDLE;
-  }
-  else
-  {
-    // NS_LOG_LOGIC (this << " state: " << m_state << " -> " << newState);
-    m_state = newState;
-    switch (newState)
-    {
-    case IDLE:
-      m_intState = 0;
-      break;
-    case TX:
-      m_intState = 1;
-      break;
-    case RX_DATA:
-      m_intState = 2;
-      break;
-    case RX_CTRL:
-      m_intState = 3;
-      break;
-    }
-  }
-
+  m_state = newState;
+  m_intState = newState;
 }
 
 

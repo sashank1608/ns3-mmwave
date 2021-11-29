@@ -16,11 +16,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * Author: Argha Sen <arghasen10@gmail.com>
- * Author: Abhijit Mondal <abhijit.manpur@gmail.com>
- * Author: Basabdatta Palit <basabdatta.iitkgp@gmail.com>
+ * Author: Sashank Bonda <sashank729@gmail.com>
  * Author: Jay Jayatheerthan <jay.jayatheerthan@intel.com>
- * Author: Krishna Paul <krishna.paul@intel.com>
- * Author: Niloy Ganguly <gangulyniloy@gmail.com>
  * Author: Sandip Chakraborty <sandipchkraborty@gmail.com>
  */
 
