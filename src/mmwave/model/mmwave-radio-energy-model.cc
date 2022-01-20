@@ -47,19 +47,19 @@ MmWaveRadioEnergyModel::GetTypeId (void)
                         "ns3::TracedValueCallback::Double")
         .AddTraceSource ("idle_time",
                      "Time spent in idle state",
-                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_idle_t),
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModel::m_idle_t),
                      "ns3::TracedValueCallback::Double")    
         .AddTraceSource ("data_time",
                      "Time spent in data state",
-                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_data_t),
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModel::m_data_t),
                      "ns3::TracedValueCallback::Double")    
         .AddTraceSource ("rxctrl_time",
                      "Time spent in ctrl state",
-                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_ctrl_t),
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModel::m_ctrl_t),
                      "ns3::TracedValueCallback::Double") 
         .AddTraceSource ("tx_time",
                      "Time spent in transmission state",
-                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_tx_t),
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModel::m_tx_t),
                      "ns3::TracedValueCallback::Double")                              
         .AddAttribute ("DeepSleepA",
                         "The default Deep Sleep Current in Amperes.",

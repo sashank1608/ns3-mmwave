@@ -16,6 +16,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * Author: Argha Sen <arghasen10@gmail.com>
+ * Author: Sashank Bonda <sashank729@gmail.com>
  * Author: Jay Jayatheerthan <jay.jayatheerthan@intel.com>
  * Author: Sandip Chakraborty <sandipchkraborty@gmail.com>
  */
@@ -42,6 +43,15 @@ public:
      * Callback type for energy recharged handling.
      */
     typedef Callback<void> MmWaveRadioEnergyRechargedCallback;
+
+    TracedValue<double> m_idle_t;
+    TracedValue<double> m_ctrl_t;
+    TracedValue<double> m_tx_t;
+    TracedValue<double> m_data_t;
+
+
+   
+   
 
     /**
      * \brief Get the type ID.

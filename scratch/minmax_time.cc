@@ -291,12 +291,14 @@ update_tx(uint32_t nodeid , double old_val, double new_val)
     min_tx = min(min_tx,new_val);
 
 }
+
 string rrcstatefile="rrcstatechange.csv";
-void HandleRRCStateChange(std::string context,uint64_t m_imsi,uint16_t m_cellId,uint16_t m_rnti, State oldState, State newState)
+void HandleRRCStateChange(std::string context,uint64_t m_imsi,uint16_t m_cellId,uint16_t m_rnti, ns3::LteUeRrc::State oldState, ns3::LteUeRrc::State newState)
 {
     std::ofstream outFile;
      outFile.open (rrcstatefile,std::ios_base::out | std::ios_base::app);
-     outFile << currentTime.GetSeconds () << "," << to_string(oldState) << "," <<to_string(newState)<<std::endl;
+     outFile << Simulator::Now ().GetSeconds () << "," << to_string(oldState) << "," <<to_string(newState)<<std::endl;
+     cout<<Simulator::Now ().GetSeconds () << "," << to_string(oldState) << "," <<to_string(newState)<<std::endl;
     //cout<<to_string(newState);
 }
 

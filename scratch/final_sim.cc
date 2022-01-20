@@ -1150,18 +1150,18 @@ BasicEnergySourceHelper basicSourceHelper;
     
   }
 
-  for (uint32_t u = 0; u < mmWaveEnbNodes.GetN (); ++u)
-  {
-    // Install Energy Source
-    EnergySourceContainer sources = basicSourceHelper.Install (mmWaveEnbNodes.Get (u));
-    // Device Energy Model
-    MmWaveRadioEnergyModelEnbHelper nrEnergyHelper;
-    DeviceEnergyModelContainer deviceEnergyModel = nrEnergyHelper.Install (mmWaveEnbNodes.Get(u)->GetDevice (0), sources);
-    //Install and start applications on UEs and remote host
-    Ptr<Node> nn = mmWaveEnbNodes.Get (u);
-    deviceEnergyModel.Get(0)->TraceConnectWithoutContext ("TotalEnergyConsumption", MakeBoundCallback (&EnergyConsumptionUpdate,nn->GetId()));
+  // for (uint32_t u = 0; u < mmWaveEnbNodes.GetN (); ++u)
+  // {
+  //   // Install Energy Source
+  //   EnergySourceContainer sources = basicSourceHelper.Install (mmWaveEnbNodes.Get (u));
+  //   // Device Energy Model
+  //   MmWaveRadioEnergyModelEnbHelper nrEnergyHelper;
+  //   DeviceEnergyModelContainer deviceEnergyModel = nrEnergyHelper.Install (mmWaveEnbNodes.Get(u)->GetDevice (0), sources);
+  //   //Install and start applications on UEs and remote host
+  //   Ptr<Node> nn = mmWaveEnbNodes.Get (u);
+  //   deviceEnergyModel.Get(0)->TraceConnectWithoutContext ("TotalEnergyConsumption", MakeBoundCallback (&EnergyConsumptionUpdate,nn->GetId()));
     
-  }
+  // }
   bool tcp = true;
   // Install and start applications on UEs and remote host
    if (tcp)
