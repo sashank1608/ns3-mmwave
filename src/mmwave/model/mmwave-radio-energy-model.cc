@@ -45,6 +45,22 @@ MmWaveRadioEnergyModel::GetTypeId (void)
                         "Total energy consumption of the radio device.",
                         MakeTraceSourceAccessor (&MmWaveRadioEnergyModel::m_totalEnergyConsumption),
                         "ns3::TracedValueCallback::Double")
+        .AddTraceSource ("idle_time",
+                     "Time spent in idle state",
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_idle_t),
+                     "ns3::TracedValueCallback::Double")    
+        .AddTraceSource ("data_time",
+                     "Time spent in data state",
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_data_t),
+                     "ns3::TracedValueCallback::Double")    
+        .AddTraceSource ("rxctrl_time",
+                     "Time spent in ctrl state",
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_ctrl_t),
+                     "ns3::TracedValueCallback::Double") 
+        .AddTraceSource ("tx_time",
+                     "Time spent in transmission state",
+                     MakeTraceSourceAccessor (&MmWaveRadioEnergyModelEnb::m_tx_t),
+                     "ns3::TracedValueCallback::Double")                              
         .AddAttribute ("DeepSleepA",
                         "The default Deep Sleep Current in Amperes.",
                         DoubleValue (0.001),
@@ -76,6 +92,10 @@ MmWaveRadioEnergyModel::MmWaveRadioEnergyModel ()
     m_source = 0;
     m_currentState = 0;
     m_lastUpdateTime = Seconds (0);
+    m_idle_t=0.0;
+    m_data_t=0.0;
+    m_ctrl_t=0.0;
+    m_tx_t=0.0;
 }
 
 MmWaveRadioEnergyModel::~MmWaveRadioEnergyModel ()
@@ -203,6 +223,22 @@ MmWaveRadioEnergyModel::ChangeState (int state)
 
   Time duration = Simulator::Now () - m_lastUpdateTime;
   NS_ASSERT (duration.IsPositive ());
+  switch (m_currentState)
+  {
+  case 0:
+    m_idle_t=duration.GetSeconds();
+    break;
+  case 1:
+     m_tx_t=duration.GetSeconds();
+    break;
+  case 2:
+     m_data_t=duration.GetSeconds();
+    break;
+  case 3:
+     m_ctrl_t=duration.GetSeconds();
+    break;
+  }
+
 
   double supplyVoltage = m_source->GetSupplyVoltage ();
   double energyToDecrease = duration.GetSeconds () * GetStateA (m_currentState) * supplyVoltage;
