@@ -456,7 +456,7 @@ main (int argc, char *argv[])
   GlobalValue::GetValueByName ("mmeLatency", doubleValue);
   double mmeLatency = doubleValue.Get ();
   GlobalValue::GetValueByName ("mobileSpeed", doubleValue);
-  double ueSpeed = doubleValue.Get ();
+  double ueSpeed = 30;
 
   double transientDuration = double(vectorTransient) / 1000000;
   double simTime = transientDuration + ((double)ueFinalPosition - (double)ueInitialPosition) / ueSpeed + 1;
