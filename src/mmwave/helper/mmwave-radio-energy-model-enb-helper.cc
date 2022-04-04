@@ -16,24 +16,23 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * Author: Argha Sen <arghasen10@gmail.com>
- * Author: Abhijit Mondal <abhijit.manpur@gmail.com>
- * Author: Basabdatta Palit <basabdatta.iitkgp@gmail.com>
+ * Author: Sashank Bonda <sashank729@gmail.com>
  * Author: Jay Jayatheerthan <jay.jayatheerthan@intel.com>
- * Author: Krishna Paul <krishna.paul@intel.com>
- * Author: Niloy Ganguly <gangulyniloy@gmail.com>
  * Author: Sandip Chakraborty <sandipchkraborty@gmail.com>
  */
 
 #include "mmwave-radio-energy-model-enb-helper.h"
+#include "ns3/device-energy-model.h"
+#include "ns3/energy-source.h"
 #include "ns3/mmwave-ue-net-device.h"
 #include "ns3/mmwave-enb-net-device.h"
 #include "ns3/mc-ue-net-device.h"
 #include "ns3/mmwave-spectrum-phy.h"
 #include "ns3/mmwave-phy.h"
-
+#include <ns3/log.h>
 namespace ns3{
 
-
+NS_LOG_COMPONENT_DEFINE ("MmWaveRadioEnergyModelEnbHelper");
 MmWaveRadioEnergyModelEnbHelper::MmWaveRadioEnergyModelEnbHelper ()
 {
     m_radioEnergy.SetTypeId ("ns3::MmWaveRadioEnergyModelEnb");
