@@ -212,10 +212,10 @@ MmWaveRadioEnergyModelEnb::ChangeStateEvent(int32_t oldState, int32_t newState)
 {
   ChangeState (newState);
 }
-struct energyTimeParams MmWaveRadioEnergyModelEnb::getTime()
-{
-  return mstate_time;
-}
+// struct energyTimeParams MmWaveRadioEnergyModelEnb::getTime()
+// {
+//   return mstate_time;
+// }
 void 
 MmWaveRadioEnergyModelEnb::ChangeState (int state)
 {
