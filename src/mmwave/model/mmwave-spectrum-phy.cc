@@ -933,7 +933,7 @@ MmWaveSpectrumPhy::StartTxDlControlFrames (std::list<Ptr<MmWaveControlMessage> >
 void
 MmWaveSpectrumPhy::EndTx ()
 {
-  NS_ASSERT (m_state == TX);
+  //NS_ASSERT (m_state == TX);
 
   ChangeState (IDLE);
 }
