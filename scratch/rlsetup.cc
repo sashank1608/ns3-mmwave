@@ -1469,7 +1469,7 @@ main (int argc, char *argv[])
   //tracefile << "Time,NodeId,Energy,Energy_BS,CellId,Distance,Velocity,cellId,rnti,ccId,tbSize,mcs,rv,SINR(dB),corrupt,TBler,min_sinr,rsrp";
   tracefile<<"Time,CellId,Action,No_of_ue,No_of_active_ue,Base_station_state,Base_station_energy";
   tracefile << std::endl;
-  tracefile.open (outputDir + tracefilename2, std::ios::out | std::ios::trunc);
+  tr.open (outputDir + tracefilename2, std::ios::out | std::ios::trunc);
   tr<<"Time,NodeID,CellID,UE_ENB_energy";
   tr<<std::endl;
 
