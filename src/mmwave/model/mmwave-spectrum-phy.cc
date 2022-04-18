@@ -539,7 +539,7 @@ MmWaveSpectrumPhy::StartRxCtrl (Ptr<MmWaveSpectrumSignalParametersDlCtrlFrame> d
               NS_LOG_LOGIC (this << " synchronized with this signal (cellId=" << m_cellId << ")");
 
               // first transmission, i.e., we're IDLE and we start RX
-              NS_ASSERT (m_rxControlMessageList.empty ());
+              // NS_ASSERT (m_rxControlMessageList.empty ());
               m_firstRxStart = Simulator::Now ();
               m_firstRxDuration = dlCtrlRxParams->duration;
               NS_LOG_LOGIC (this << " scheduling EndRx with delay " << dlCtrlRxParams->duration);
