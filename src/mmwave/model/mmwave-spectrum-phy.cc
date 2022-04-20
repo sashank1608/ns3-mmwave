@@ -538,7 +538,7 @@ MmWaveSpectrumPhy::StartRxCtrl (Ptr<MmWaveSpectrumSignalParametersDlCtrlFrame> d
             {
               NS_LOG_LOGIC (this << " synchronized with this signal (cellId=" << m_cellId << ")");
 
-              // first transmission, i.e., we're IDLE and we start RX
+              // first transmission, i.e., we're IDLE and we start RX; commented out because assertion error
               // NS_ASSERT (m_rxControlMessageList.empty ());
               m_firstRxStart = Simulator::Now ();
               m_firstRxDuration = dlCtrlRxParams->duration;

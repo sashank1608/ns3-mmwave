@@ -698,7 +698,7 @@ NotifyHandoverEndOkEnb (std::string context, uint64_t imsi, uint16_t cellid, uin
       uint32_t old_cellid = ue_cellid_usinghandover[nodeid];
       std::ofstream outFile;
       outFile.open (outputDir + tracefilename2, std::ios::out | std::ios::app);
-      outFile<<Simulator::Now().GetSeconds()<<" "<<old_cellid<<" "<<connected_ue_energy[make_pair(old_cellid,nodeid)]<<"\n";
+      outFile<<Simulator::Now().GetSeconds()<<","<<old_cellid<<","<<connected_ue_energy[make_pair(old_cellid,nodeid)]<<"\n";
       ue_list[old_cellid].erase(nodeid);
       //[make_pair(old_cellid,nodeid)] = 0;
       no_of_active_ue[old_cellid]-= active[nodeid];
@@ -813,8 +813,8 @@ map<uint16_t,int> base_station_state;
 map<pair<uint16_t,uint32_t>,double> connected_ue_energy;
 map<uint16_t,int> no_of_active_ue;
    */
-  outFile<<currenttime<<" "<<cellid<<" "<<action[cellid]<<" "<<ue_list[cellid].size()<<" "<<no_of_active_ue[cellid]
-  <<!base_station_state[cellid]<<" "<<enb_energy_map[cellid]<<"\n";
+  outFile<<currenttime<<","<<cellid<<","<<action[cellid]<<","<<ue_list[cellid].size()<<","<<no_of_active_ue[cellid]
+  <<!base_station_state[cellid]<<","<<enb_energy_map[cellid]<<"\n";
   Simulator::Schedule (Seconds (1), &base_station_data, cellid);
 }
 
